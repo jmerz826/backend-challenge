@@ -1,3 +1,3 @@
 exports.currentStatus = function (req, res) {
-  res.status(200).send()
+  res.sendStatus(200)
 }
