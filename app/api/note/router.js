@@ -1,9 +1,11 @@
 const controller = require('./controller')
+const validator = require('./validator')
 const auth = require('./auth')
 
 module.exports = (router) => {
-  router.get('/note/:id', async (req, res) => {
-    await auth.requiresCurrentUser(req)
-    await controller.readAll(req, res)
+  router.post('/note', async (req, res) => {
+    await auth.requiresLogin(req)
+    await validator.create(req)
+    await controller.create(req, res)
   })
 }
