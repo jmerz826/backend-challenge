@@ -49,7 +49,7 @@ describe('api', () => {
         notes[0].userId.should.equal(globalAuth.user)
       })
 
-      it('should throw 403 for valid auth and non-matching userId param', async () => {
+      it('should forbid reading user notes of non-current user', async () => {
         return agent
           .client()
           .get(`/user/${globalAuth.user}123/notes`)
