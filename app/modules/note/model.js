@@ -6,17 +6,21 @@ class NoteModel extends Model {
       userId: {
         type: String,
         trim: true,
-        required: true
+        required: true,
+        index: true
       },
       title: {
         type: String,
         trim: true,
-        required: true
+        required: true,
+        unique: true,
+        maxLength: 64
       },
       message: {
         type: String,
         trim: true,
-        required: true
+        required: true,
+        maxLength: 500
       }
     }
   }
