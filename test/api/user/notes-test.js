@@ -46,6 +46,7 @@ describe('api', () => {
         should.exist(notes)
         notes.should.be.an.Array()
         notes.length.should.equal(2)
+        notes[0].userId.should.equal(globalAuth.user)
       })
 
       it('should throw 403 for valid auth and non-matching userId param', async () => {
