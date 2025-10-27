@@ -13,7 +13,6 @@ class NoteModel extends Model {
         type: String,
         trim: true,
         required: true,
-        unique: true,
         maxLength: 64
       },
       message: {
